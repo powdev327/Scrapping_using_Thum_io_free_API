@@ -122,7 +122,7 @@ export default function WebSnapper() {
           type="file"
           accept=".csv"
           onChange={handleCSVUpload}
-          className="hidden"
+          style={{ display: 'none' }}
         />
       </div>
 
