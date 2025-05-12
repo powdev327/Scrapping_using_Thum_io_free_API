@@ -41,7 +41,8 @@ table {
   table-layout: fixed;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 0.5rem;
   border: 1px solid #e5e7eb;
@@ -68,4 +69,30 @@ input[type="file"] {
 
 a {
   color: #2563eb;
+}
+
+@keyframes borderAnimation {
+  0% {
+    border-color: #3b82f6;
+    /* Blue */
+  }
+
+  33% {
+    border-color: #10b981;
+    /* Green */
+  }
+
+  66% {
+    border-color: #f59e0b;
+    /* Yellow */
+  }
+
+  100% {
+    border-color: #3b82f6;
+    /* Blue */
+  }
+}
+
+.animate-border {
+  animation: borderAnimation 3s infinite;
 }

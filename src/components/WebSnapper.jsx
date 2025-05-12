@@ -50,7 +50,7 @@ export default function WebSnapper() {
         const screenshotUrl = `${THUM_IO_BASE}/get/auth/${API_KEY}/${url}`;
 
         const response = await fetch(screenshotUrl, {
-          
+
         });
         if (!response.ok) throw new Error("Failed to fetch");
         const blob = await response.blob();
@@ -64,15 +64,15 @@ export default function WebSnapper() {
   };
 
   const downloadScreenshot = (url) => {
-  console.log(`Attempting to download for ${url}`);
-  const screenshot = screenshots[url];
-  if (!screenshot || !screenshot.blob) {
-    console.error("No blob found for URL:", url);
-    return;
-  }
-  const filename = `${new URL(url).hostname}.png`;
-  saveAs(screenshot.blob, filename);
-};
+    console.log(`Attempting to download for ${url}`);
+    const screenshot = screenshots[url];
+    if (!screenshot || !screenshot.blob) {
+      console.error("No blob found for URL:", url);
+      return;
+    }
+    const filename = `${new URL(url).hostname}.png`;
+    saveAs(screenshot.blob, filename);
+  };
 
 
   const downloadAllAsZip = async () => {
@@ -106,7 +106,7 @@ export default function WebSnapper() {
       <textarea
         rows={10}
         spellCheck={false}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded animate-border"
         placeholder="Paste URLs here, one per line"
         onChange={handleTextAreaChange}
       />
