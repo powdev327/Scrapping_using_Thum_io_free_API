@@ -104,12 +104,18 @@ export default function WebSnapper() {
       <h1>My telegram number. @prince_lion97</h1>
 
       <textarea
-        rows={6}
+        rows={10}
+        spellCheck={false}
         className="w-full p-2 border rounded"
         placeholder="Paste URLs here, one per line"
         onChange={handleTextAreaChange}
       />
-      <input type="file" accept=".csv" onChange={handleCSVUpload} className="block" />
+      <input
+        type="file"
+        accept=".csv"
+        onChange={handleCSVUpload}
+        className="block px-4 py-2 border border-blue-500 rounded-lg bg-blue-500 text-white cursor-pointer transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+      />
 
       <div className="flex flex-wrap gap-2">
         <Button onClick={startCapture}>Start Capture</Button>
