@@ -6,12 +6,8 @@ import JSZip from 'jszip';
 import saveAs from 'file-saver';
 import Button from './ui/Button'; // Ensure this path is correct
 
-const THUM_IO_BASE = "http://image.thum.io"; // Base URL for the API
+const THUM_IO_BASE = "https://image.thum.io"; // Base URL for the API
 const API_KEY = import.meta.env.VITE_API_KEY; // Use the API key from the .env file
-
-// const fs = require('fs'); // Node.js file system module, not available in browser context
- import axios from 'axios';
- import fs from 'fs'; // Node.js file system module, not available in browser context
 
 export default function WebSnapper() {
   const [urls, setUrls] = useState([]);
@@ -47,13 +43,8 @@ export default function WebSnapper() {
     reader.readAsText(file);
   };
 
-
-  // http://image.thum.io/get/auth/{your auth}
-  // https://image.thum.io/get/74115-nick123/https://example.com
-
   const startCapture = async () => {
     for (const url of urls) {
-      const API_KEY = import.meta.env.VITE_API_KEY;
       setStatusMap((prev) => ({ ...prev, [url]: "Capturing" }));
       try {
         const screenshotUrl = `${THUM_IO_BASE}/get/auth/${API_KEY}/${url}`;
@@ -110,6 +101,8 @@ export default function WebSnapper() {
   return (
     <div className="p-4 space-y-4 max-w-full overflow-x-auto">
       <h1 className="text-xl font-bold text-center">WebSnapper</h1>
+      <h1>My telegram number. @prince_lion97</h1>
+
       <textarea
         rows={6}
         className="w-full p-2 border rounded"
