@@ -101,7 +101,7 @@ export default function WebSnapper() {
   return (
     <div className="p-4 space-y-4 max-w-full overflow-x-auto">
       <h1 className="text-xl font-bold text-center">WebSnapper</h1>
-      <a href= "https://tg.me/@prince_lion97">How can  contact me?</a>
+      <a href= "https://t.me/@prince_lion97">How can  contact me?</a>
 
       <textarea
         rows={10}
