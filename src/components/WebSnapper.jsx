@@ -101,7 +101,7 @@ export default function WebSnapper() {
   return (
     <div className="p-4 space-y-4 max-w-full overflow-x-auto">
       <h1 className="text-xl font-bold text-center">WebSnapper</h1>
-      <h1>My telegram number. @prince_lion97</h1>
+      {/* <h1>My telegram number. @prince_lion97</h1> */}
 
       <textarea
         rows={10}
@@ -110,12 +110,21 @@ export default function WebSnapper() {
         placeholder="Paste URLs here, one per line"
         onChange={handleTextAreaChange}
       />
-      <input
-        type="file"
-        accept=".csv"
-        onChange={handleCSVUpload}
-        className="block px-4 py-2 border border-blue-500 rounded-lg bg-blue-500 text-white cursor-pointer transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
-      />
+      <div className="relative inline-block">
+        <label
+          htmlFor="file-upload"
+          className="block px-4 py-2 border border-blue-500 rounded-lg bg-blue-500 text-white cursor-pointer transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        >
+          Choose File
+        </label>
+        <input
+          id="file-upload"
+          type="file"
+          accept=".csv"
+          onChange={handleCSVUpload}
+          className="hidden"
+        />
+      </div>
 
       <div className="flex flex-wrap gap-2">
         <Button onClick={startCapture}>Start Capture</Button>
